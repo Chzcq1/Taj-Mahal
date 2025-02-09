@@ -1,0 +1,130 @@
+/* รีเซ็ตค่าเริ่มต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* สไตล์หลัก */
+body {
+    font-family: "TH Sarabun New", sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* เฮดเดอร์ */
+header {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+header h1 {
+    font-size: 48px;
+    color: #222;
+}
+
+header p {
+    font-size: 20px;
+    color: #666;
+}
+
+/* ส่วนเนื้อหา */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.image img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    animation: floating 6s infinite ease-in-out;
+}
+
+/* ข้อความ */
+.text {
+    max-width: 600px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.text h2 {
+    font-size: 36px;
+    color: #444;
+}
+
+.text p {
+    font-size: 22px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* เอฟเฟกต์ลอยตัว */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* เอฟเฟกต์เลือนปรากฏ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* แสดงผลเมื่อเลื่อนถึง */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ฟุตเตอร์ */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    color: #888;
+}
+
+/* อนุภาคละอองฝุ่น */
+@keyframes dust-move {
+    0% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-50px) translateX(20px) scale(1.2); opacity: 0.5; }
+    100% { transform: translateY(-100px) translateX(-20px) scale(1.5); opacity: 0; }
+}
+
+.dust {
+    position: absolute;
+    background-color: rgba(200, 200, 200, 0.2);
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    opacity: 0;
+    animation: dust-move 5s infinite ease-in-out;
+}
+
+/* อนิเมชั่นฟองอากาศ */
+@keyframes bubble-move {
+    0% { transform: translateY(0px) scale(0.8); opacity: 0.4; }
+    50% { opacity: 0.7; }
+    100% { transform: translateY(-150px) scale(1.2); opacity: 0; }
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5); /* เพิ่มความขาวให้ชัดขึ้น */
+    border-radius: 50%;
+    opacity: 0;
+    animation: bubble-move linear infinite;
+}

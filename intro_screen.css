@@ -1,0 +1,54 @@
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #111; /* สีดำเข้มเพื่อให้ดูมีความขลัง */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 26px; /* ขยายขนาดข้อความ */
+    font-family: "Cursive", serif;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+    overflow: hidden; /* ป้องกันไม่ให้ข้อความเลยออกจากกรอบ */
+}
+
+/* Mystic Text */
+.intro-content {
+    max-width: 80%;
+}
+
+/* ข้อความแสดงทีละบรรทัด */
+#mystic-text {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    font-size: 26px; /* เพิ่มขนาดตัวหนังสือ */
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* เงาขาวเพื่อเพิ่มความขลัง */
+    color: #f2f2f2; /* ให้สีฟ้าอ่อน */
+}
+
+/* ข้อความให้แตะเพื่อเข้าสู่เว็บ */
+#tap-to-enter {
+    font-size: 21px; /* ขยายขนาดตัวหนังสือ */
+    margin-top: 20px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+    font-family: "Cursive", serif;
+    color: #ffcc00; /* สีทองเพื่อเพิ่มความขลัง */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* เงาขาวสีทอง */
+    letter-spacing: 2px; /* ให้ตัวอักษรห่างออกไปเล็กน้อย */
+}
+
+#tap-to-enter:hover {
+    transform: scale(1.1);
+    color: #ffea00; /* เปลี่ยนสีเมื่อ hover */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* เพิ่มเงามากขึ้นตอน hover */
+}

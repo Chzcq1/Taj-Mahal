@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทัชมาฮาล</title>
+    <link rel="stylesheet" href="intro_screen.css">
+    <style>
+        /* ซ่อนหน้า main ในตอนแรก */
+        #main-content {
+            display: none;
+        }
+    </style>
+</head>
+    <body>
+        <!-- Intro Screen -->
+        <div id="intro-screen">
+            <div class="intro-content">
+                <p id="mystic-text">ความรักนั้นเป็นนิรันดร์...</p>
+                <p id="tap-to-enter">แตะที่ใดก็เพื่อเข้าชมเว็บไซต์</p>
+            </div>
+        </div>
+    </body>
+        <script src="intro_screen.js"></script>
+        <script>
+            // เมื่อแตะที่หน้า Intro ให้เปลี่ยนไปยังหน้า main.html
+            document.getElementById("intro-screen").addEventListener("click", function() {
+                // ทำให้หน้า Intro หายไปก่อน
+                document.getElementById("intro-screen").style.display = "none";
+                // แสดงเนื้อหาหลัก
+                document.getElementById("main-content").style.display = "block";
+            });
+
+            // หน่วงเวลาให้หน้า Intro แสดงก่อน
+            setTimeout(function() {
+                // ทำให้หน้า Intro หายไป
+                document.getElementById("intro-screen").style.display = "none";
+                // ไปยังหน้า main.html
+                window.location.href = "main.html"; // เปลี่ยนไปยัง main.html
+            }, 16000); // 3 วินาที
+        </script>
+    </body>
+</html>
