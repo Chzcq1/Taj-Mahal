@@ -128,3 +128,20 @@ footer {
     opacity: 0;
     animation: bubble-move linear infinite;
 }
+
+
+/* คอนเทนเนอร์สำหรับแผนที่ */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 300px;  /* หรือใช้ height: 50vh; เพื่อให้แผนที่มีความสูงเท่าครึ่งหนึ่งของหน้าจอ */
+    overflow: hidden; /* ป้องกันแผนที่ล้นออกมา */
+    margin: 0 auto; /* จัดกลาง */
+}
+
+/* แผนที่ */
+.map-container iframe {
+    width: 100%;  /* ให้แผนที่ขยายเต็มความกว้าง */
+    height: 100%; /* ให้แผนที่ขยายเต็มความสูง */
+    object-fit: cover; /* ให้แผนที่ไม่บิดเบี้ยว */
+}
